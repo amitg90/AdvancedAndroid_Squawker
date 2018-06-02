@@ -86,6 +86,21 @@ public class MainActivity extends AppCompatActivity implements
         // Start the loader
         getSupportLoaderManager().initLoader(LOADER_ID_MESSAGES, null, this);
 
+        Log.e("MainActivity", "Checking 2");
+
+        //
+        if (savedInstanceState != null) {
+            Log.e("MainActivity", "Checking 1");
+
+            Bundle bundle = getIntent().getExtras();
+
+            Log.e("MainActivity", bundle.toString());
+
+            if (bundle != null && bundle.containsKey("Amit-test") == true) {
+                Log.e("MainActivity", bundle.getString("Amit-test"));
+            }
+        }
+
     }
 
     @Override
